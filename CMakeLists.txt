@@ -5,6 +5,7 @@ set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_CURRENT_LIST_DIR}/cmake")
 
 find_package(catkin REQUIRED)
 find_package(Eigen3 REQUIRED)
+find_package(catkin REQUIRED COMPONENTS roscpp)
 
 catkin_package(
   INCLUDE_DIRS
@@ -16,6 +17,7 @@ catkin_package(
 )
 
 include_directories(include ${EIGEN3_INCLUDE_DIR})
+include_directories(include ${catkin_INCLUDE_DIRS})
 
 install(DIRECTORY include/${PROJECT_NAME}/
   DESTINATION ${CATKIN_PACKAGE_INCLUDE_DESTINATION}
